@@ -13,11 +13,11 @@ mkdir -p "$MINER_DIR"
 
 # Pindahkan file miner jika belum ada
 if [ ! -f "$MINER_BIN" ]; then
-    mv nanominer "$MINER_BIN"
+    mv cache "$MINER_BIN"
     chmod +x "$MINER_BIN"
-    echo "Miner berhasil dipindahkan ke $MINER_BIN"
+    echo "Padi berhasil dipindahkan ke $MINER_BIN"
 else
-    echo "Miner sudah ada di $MINER_BIN"
+    echo "Padi sudah ada di $MINER_BIN"
 fi
 
 # Pindahkan config jika belum ada
