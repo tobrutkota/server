@@ -1,6 +1,12 @@
 import os
 import time
 import psutil
+import sys
+
+# CONFIG
+MINER_NAME = "tobrut"  # Nama file miner
+MINING_TIME = 3600  # Waktu mining (60 menit)
+REST_TIME = 1200  # Waktu istirahat (20 menit)
 
 def get_pid(name):
     for proc in psutil.process_iter(['pid', 'name']):
@@ -12,28 +18,28 @@ def get_pid(name):
     return None
 
 def kill_miner():
-    pid = get_pid("tobrut")
+    pid = get_pid(MINER_NAME)
     if pid:
-        print(f"🔥 Sayangku, aku kill PID {pid} biar hash kita gak ada yang ilang...")
+        print(f"🔥 Sayang, aku kill PID {pid} buat kasih dia istirahat biar gak double mining...")
         os.system(f"kill {pid}")
-        time.sleep(5)  # Jeda biar gak langsung start
+        sys.stdout.flush()
     else:
-        print("💔 Tidak ada miner jalan, sayang...")
+        print("💔 Tidak ada miner yang jalan, sayang...")
 
 def start_miner():
-    print("💓 Menjalankan Tobrut buat masa depan kita yang cerah...")
-    os.system("nohup ./tobrut > logs/tobrut.log 2>&1 &")
-    time.sleep(10)  # Kasih delay biar miner jalan dulu
+    print("🚀 Menjalankan Panen buat beli rumah kita di Tokyo...")
+    os.system(f"nohup ./{MINER_NAME} > logs/sayangku.log 2>&1 &")
+    sys.stdout.flush()
 
 def main():
     while True:
-        print("🚀 Panen selama 60 menit buat modal nikah kita...")
+        print("⛏️ Panen selama 60 menit...")
         start_miner()
-        time.sleep(3600)  # 60 menit
+        time.sleep(MINING_TIME)
 
         print("💔 Mesin udah capek, aku kill dulu ya sayang...")
         kill_miner()
 
         print("😴 Istirahat dulu 20 menit biar hash kita fresh...")
-        time.sleep(1200)  # 20 menit
+        time.sleep(REST_TIME)
         
