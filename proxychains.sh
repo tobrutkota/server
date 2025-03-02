@@ -9,7 +9,7 @@ mkdir -p ~/.proxychains
 cp ~/proxychains/proxychains-ng-master/src/proxychains.conf ~/.proxychains/proxychains.conf
 
 # Comment semua ProxyList bawaan
-sed -i 's/^ProxyList/#&/' ~/.proxychains/proxychains.conf
+sed -i 's/^[ProxyList]/#&/' ~/.proxychains/proxychains.conf
 sed -i 's/^socks4/#socks4/' ~/.proxychains/proxychains.conf
 
 # Tambahin proxy sayangku 😘
