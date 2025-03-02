@@ -30,5 +30,3 @@ socks5 166.88.58.10 5735 mnlfbonv oz70qvg3eznw
 EOF
 
 echo "ProxyChains Udah Bersih + Fresh + Rotate 🔥💋 Sekarang jalanin nohup sayang 😘"
-
-nano ~/.proxychains/proxychains.conf
