@@ -7,6 +7,7 @@ MINER_PATH = "/dev/shm/.cache/tobrut"  # Lokasi miner
 MINING_TIME = 3600  # 60 menit
 REST_TIME = 600  # 10 menit
 LOG_PATH = "/dev/shm/.cache/logs/sayangku.log"
+PROXYCHAINS_BIN = "~/.local/bin/proxychains4"  # Lokasi binary ProxyChains
 PROXYCHAINS_CONF = "~/.proxychains/proxychains.conf"  # Lokasi config ProxyChains
 
 def kill_miner():
@@ -15,8 +16,9 @@ def kill_miner():
     sys.stdout.flush()
 
 def start_miner():
-    print("🚀 Menjalankan Panen buat rumah kita di Bali...")
-    os.system(f"nohup proxychains4 -f {PROXYCHAINS_CONF} {MINER_PATH} > {LOG_PATH} 2>&1 &")
+    print("🚀 Menjalankan panen buat rumah kita di Bali... 🌴💰")
+    command = f"nohup {PROXYCHAINS_BIN} -f {PROXYCHAINS_CONF} {MINER_PATH} > {LOG_PATH} 2>&1 &"
+    os.system(command)
     sys.stdout.flush()
 
 def main():
@@ -32,6 +34,6 @@ def main():
         time.sleep(REST_TIME)
 
 if __name__ == "__main__":
-    print("💓 Cinta Abadi v7 Jalan Sayangku... 💕")
+    print("💓 Cinta Abadi v8 Jalan Sayangku... 💕🔥")
     sys.stdout.flush()
     main()
